@@ -1,0 +1,6 @@
+// map.scss
+@import "styles/config/mixins";
+
+#map {
+  @include size(100%, 100vh);
+}

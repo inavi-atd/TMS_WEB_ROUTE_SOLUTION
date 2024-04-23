@@ -1,0 +1,62 @@
+.drag_drop_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 20px;
+  margin-bottom: 8px;
+  background: var(--gray-100);
+  border-radius: 4px;
+  border: 1px solid var(--gray-200);
+  border-style: dashed;
+
+  .file {
+    display: inline-block;
+    height: 40px;
+    padding: 0 10px;
+    vertical-align: middle;
+    border: 1px solid #dddddd;
+    width: 78%;
+    color: #999999;
+  }
+
+  .label {
+    font-size: 12px;
+    font-weight: 300;
+
+    &.file_desc {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--gray-400);
+      margin-bottom: 4px;
+
+      svg {
+        width: 28px;
+        height: 30px;
+        fill: var(--primary);
+      }
+    }
+    &.drag_drop_file {
+      line-height: 26px;
+      padding: 0 8px;
+      color: var(--primary-dark);
+      background-color: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:before {
+        display: inline-block;
+        content: "+";
+        margin-right: 4px;
+      }
+    }
+    &.dragging {
+    }
+  }
+}

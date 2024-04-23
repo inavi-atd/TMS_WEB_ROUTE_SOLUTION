@@ -1,0 +1,29 @@
+.date_picker_wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+
+  label {
+    font-size: 13px;
+    flex: 0 0 100px;
+  }
+}
+.react-datepicker-wrapper {
+  flex: 0 0 140px;
+  margin-left: auto;
+  input {
+    width: 140px;
+    height: 25px;
+    padding: 4px 12px;
+    font-size: 12px;
+    border-radius: 4px;
+    color: var(--gray-400);
+    border: 1px solid var(--gray-200);
+
+    &:focus-visible {
+      outline: 0;
+    }
+  }
+}

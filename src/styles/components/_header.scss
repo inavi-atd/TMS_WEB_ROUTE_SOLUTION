@@ -1,0 +1,27 @@
+// header.scss
+
+.title_area {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  .title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 auto 0 -18px;
+  }
+  button {
+    display: flex;
+    z-index: 10;
+
+    svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--gray-700);
+    }
+  }
+}

@@ -1,0 +1,65 @@
+// panel.scss
+.panel_wrap {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 100%;
+  background: var(--white);
+
+  .panel_header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .panel_inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .option {
+      display: flex;
+      padding: 16px 20px;
+
+      .option_label {
+        font-size: 16px;
+      }
+    }
+  }
+  .panel_footer {
+    padding: 16px 20px;
+
+    .btn_group {
+      display: flex;
+      gap: 8px;
+
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 34px;
+        background: var(--white);
+        border-radius: 4px;
+
+        &.list_down_btn {
+          color: var(--white);
+          background: var(--primary);
+          // color: var(--primary);
+          // border: 1px solid var(--primary);
+        }
+        &.area_expand_btn {
+          color: var(--white);
+          background: var(--primary);
+        }
+      }
+    }
+
+    .active_btn {
+      width: 100%;
+      height: 34px;
+      color: var(--white);
+      font-size: 13px;
+      background: var(--primary);
+    }
+  }
+}

@@ -1,0 +1,62 @@
+// sidemenu.scss
+
+// sidemenu > common
+.side-menu-wrap {
+  width: 200px;
+  color: var(--white);
+  .side-menu-inner {
+  }
+}
+// sidemenu > header
+.side-menu-header {
+  margin: 12px 0;
+  .logo {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 12px 20px;
+    line-height: 1;
+
+    .logo_link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--white);
+    }
+
+    .logo_img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+// sidemenu > container
+.side-menu-container {
+  .side-menu-scroll {
+    .side-menu {
+      .side-menu-item {
+        line-height: 1;
+
+        &:hover {
+          background: rgba(255, 2555, 255, 0.08);
+        }
+        &.active {
+          background: rgba(255, 2555, 255, 0.08);
+        }
+        button {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          width: 100%;
+          padding: 12px 20px;
+          font-size: 14px;
+          color: var(--white);
+          text-align: left;
+
+          svg {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

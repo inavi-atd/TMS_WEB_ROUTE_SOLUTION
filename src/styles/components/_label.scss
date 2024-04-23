@@ -1,0 +1,13 @@
+// label.scss
+.label {
+  font-size: 14px;
+  font-weight: 500;
+
+  &.essential {
+    &:after {
+      display: inline-block;
+      content: "*";
+      color: var(--primary);
+    }
+  }
+}

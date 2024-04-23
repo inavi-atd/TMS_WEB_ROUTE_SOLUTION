@@ -1,0 +1,104 @@
+// @desc position : 위치값 설정
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $left: null,
+  $bottom: null,
+  $z-index: null
+) {
+  position: $position;
+  right: $right;
+  left: $left;
+  top: $top;
+  bottom: $bottom;
+  z-index: $z-index;
+}
+// @desc width, height : 너비, 높이값 설정
+@mixin size($width, $height...) {
+  @if length($height) ==1 {
+    width: $width;
+    height: $height;
+  } @else {
+    width: $width;
+    height: $width;
+  }
+}
+
+// @desc background : 배경 설정
+// 1) 경로 2) 파일명 3) 파일확장자
+@mixin bg($name, $path: "/images/", $format: "png") {
+  background: url("${path}#{name}.#{$format}");
+}
+
+// @desc blind : 숨김 설정 - IR 기법 설정 (접근성을 위한 대체 텍스트 표시)
+@mixin blind {
+  @include position(absolute);
+  @include width(1px);
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  white-space: nowrap;
+  clip: rect(0, 0, 0, 0);
+}
+
+// @desc ellipsis : 말줄임 설정 - IR 기법 설정 (접근성을 위한 대체 텍스트 표시)
+@mixin ellipsis($lines: 1) {
+  @if ($lines == 1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+  }
+}
+
+// @desc scrollbar : 스크롤바
+@mixin scrollbar {
+  &::-webkit-scrollbar-track {
+    margin: 0 4px;
+    padding: 0 5px;
+    box-shadow: inset 0 0 6px rgba(#333, 0.15);
+    background: var(--surface-a);
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background: #cccccc;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+}
+
+// @desc hover scrollbar :: hover 동작시 생성 스크롤바
+@mixin hover-scrollbar {
+  &::-webkit-scrollbar {
+    width: 6px;
+    background: transparent;
+  }
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+  }
+  &::-webkit-scrollbar-track {
+    margin-left: -6px;
+  }
+}
